@@ -1,0 +1,4 @@
+applications:
+- name: predict-python-app
+  memory: 256M
+  buildpack: python_buildpack
