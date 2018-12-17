@@ -14,7 +14,6 @@ cf_port = int(os.getenv('PORT', '3000'))
 
 print("port:",cf_port)
 
-
 # start the app
 #if __name__ == "__main__":
 
@@ -23,7 +22,7 @@ def predict():
     #grabbing a set of wine features from the request's body
     feature_array = request.get_json()['feature_array']
 
-    print(len(feature_array))    
+    # print(len(feature_array))    
     #our model rates the wine based on the input array
     prediction = model.predict([feature_array]).tolist()
     

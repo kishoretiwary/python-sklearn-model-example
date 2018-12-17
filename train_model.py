@@ -21,8 +21,8 @@ regr.fit(features, label)
 #each number represents a feature like pH, acidity, etc.
 print (regr.predict([[7.4,0.66,0,1.8,0.075,13,40,0.9978,3.51,0.56,9.4]]).tolist())
 
-
 #serializing our model to a file called model.pkl
+print ("Writing model file ...\n")
 pickle.dump(regr, open("model.pkl","wb"),2)
 
 #loading a model from a file called model.pkl
