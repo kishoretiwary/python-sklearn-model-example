@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: wine-predict-demo-deployment
+  labels:
+    app: wine-predict-demo
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: wine-predict-demo
+  template:
+    metadata:
+      labels:
+        app: wine-predict-demo
+    spec:
+      containers:
+      - name: wine-predict-demo
+        image: wrackzone/wine-predict-demo:latest
+        ports:
+        - containerPort: 80
+      nodeSelector:
+        level: easy
