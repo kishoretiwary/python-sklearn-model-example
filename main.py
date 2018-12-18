@@ -12,10 +12,16 @@ model = pickle.load(open("model.pkl","rb"))
 # set the port dynamically with a default of 3000 for local development
 cf_port = int(os.getenv('PORT', '3000'))
 
+print("Starting application .................................................!\n")
+
 print("port:",cf_port)
 
 # start the app
 #if __name__ == "__main__":
+
+@app.route('/isAlive')
+def index():
+    return "true"
 
 @app.route('/predict', methods=['POST'])
 def predict():
@@ -36,3 +42,5 @@ def predict():
 # app.run(host='0.0.0.0', port=port)
 app.debug=True
 
+if __name__ == '__main__':
+  app.run(port=cf_port,host='0.0.0.0')
