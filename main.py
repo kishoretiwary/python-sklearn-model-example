@@ -23,6 +23,10 @@ print("port:",cf_port)
 def index():
     return "true"
 
+@app.route('/coef', methods=['GET'])
+def coef():
+    return flask.jsonify(model.coef_.tolist())
+
 @app.route('/predict', methods=['POST'])
 def predict():
     #grabbing a set of wine features from the request's body
