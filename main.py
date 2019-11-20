@@ -19,6 +19,10 @@ print("port:",cf_port)
 # start the app
 #if __name__ == "__main__":
 
+@app.route('/')
+def index():
+    return "wine-predict-demo"
+
 @app.route('/isAlive')
 def index():
     return "true"
@@ -26,6 +30,10 @@ def index():
 @app.route('/coef', methods=['GET'])
 def coef():
     return flask.jsonify(model.coef_.tolist())
+
+@app.route('/instance')
+def instance():
+    return "{" + " guid : " + os.environ.get('CF_INSTANCE_GUID') + ", ip:"+ os.environ.get('CF_INSTANCE_IP') + "}"
 
 @app.route('/predict', methods=['POST'])
 def predict():
