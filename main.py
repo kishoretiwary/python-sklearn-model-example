@@ -20,8 +20,8 @@ print("port:",cf_port)
 #if __name__ == "__main__":
 
 @app.route('/')
-def index():
-    return "wine-predict-demo"
+def home():
+    return "predict-demo"
 
 @app.route('/isAlive')
 def index():
