@@ -1,5 +1,5 @@
 applications:
-- name: predict-python-app
+- name: links-python-app
   memory: 256M
   buildpack: python_buildpack
 
